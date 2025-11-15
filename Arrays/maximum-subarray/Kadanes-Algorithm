@@ -1,0 +1,19 @@
+class Solution:
+    def maxSubArray(self, nums: List[int]) -> int:
+        s=0
+        ms=-100000
+        m=-100000
+        for i in range(0,len(nums)):
+            e=nums[i]
+            if i==0:
+               ms=nums[i]
+               m=ms
+               continue
+            s=ms+e
+            ms=max(e,s)
+            m=max(m,ms)
+            #print(f"maxsum:{ms}  sum:{s}")
+        return m
+                
+
+
